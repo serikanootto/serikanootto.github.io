@@ -20,3 +20,4 @@ cutin14：バスマ
 cutin15：ウィンドブラスト
 cutin16：Riot the RioP☆Disc2
 cutin17：ディープブリーズ
+cutin18：真説インシュアランス
