@@ -28,5 +28,5 @@ cutin16：Riot the RioP☆Disc2
 cutin17：ディープブリーズ
 cutin18：真説インシュアランス
 cutin19：フローズンハート
-cutin20：Determination of the Immortal Soul
-cutin21：再生喚起の儀
+cutin20：甦生喚起の儀
+cutin21：Determination of the Immortal Soul
