@@ -30,3 +30,6 @@ cutin18：真説インシュアランス
 cutin19：フローズンハート
 cutin20：甦生喚起の儀
 cutin21：Determination of the Immortal Soul
+cutin22：フローズンマレット
+cutin23：カルパッチョ
+cutin24：サモンサーディン
