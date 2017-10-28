@@ -45,3 +45,5 @@ cutin21：Determination of the Immortal Soul
 cutin22：フローズンマレット
 cutin23：カルパッチョ
 cutin24：サモンサーディン
+cutin25：皇帝の脅威（フラ）
+cutin26：クレアボヤンス（エール）
