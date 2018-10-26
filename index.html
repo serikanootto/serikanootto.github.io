@@ -19,7 +19,7 @@ h1{
   -webkit-text-fill-color: transparent;
   
   /* アニメーション指定 */
-  animation: example 1s linear infinite;
+  animation: rainbow 1s linear infinite;
   
   text-align: center;
   
@@ -38,15 +38,50 @@ niji{
   -webkit-text-fill-color: transparent;
   
   /* アニメーション指定 */
-  animation: example 5s linear infinite;
+  animation: rainbow 5s linear infinite;
   
   text-align: center;
   
 }
 
 /* 背景の横位置をズラす */
-@keyframes example {
+@keyframes rainbow {
   to { background-position-x: 200%; }
+}
+
+/* 表示領域 */
+.naname {
+    width: 1600px;
+    overflow: hidden;
+}
+/* 表示領域に合わせてサイズと余白を設定 */
+.naname2 {
+    width: 1600px;
+    padding-left: 1600px;
+    white-space: nowrap;
+
+    animation-name: slide;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+ /* 背景グラデーションを指定・幅を 200% にしておく */
+  background: linear-gradient(to right, #f00 0%, #f80 14.28%, #dd0 28.56%, #0d0 42.85%, #0dd 57.14%, #00f 71.42%, #e0e 85.71%, #f00 100%) 0% center / 200% auto;
+  
+  /* 背景画像を文字でマスクする */
+          background-clip: text;
+  -webkit-background-clip: text;
+  
+  /* 文字色を透明にできればよく color: transparent でも color: rgba(0, 0, 0, 0) でも可 */
+          text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+  font-size: 300%;
+  font-style: oblique;
+  
+}
+@keyframes slide {
+    from    { transform: translate(0%); } 
+    100%,to { transform: translate(-100%); }
+      to { background-position-x: 200%; }
 }
 
 body{
@@ -63,8 +98,16 @@ body{
 <br>
 <br>
 <br>
+<div class="naname">
+    <div class="naname2">
+        ここは雑多に色々なものを置くはきだめです
+    </div>
+</div>
 <br>
 <br>
+<br>
+<br>
+
 <niji><font size = 5>クソコンテンツ</font></niji>
 <br>
 <a href=sinkirousave.zip>東方心綺楼マミゾウ解禁セーブデータ</a><font size = 4><niji>　居酒屋で有名な三桁さんありがとう！</niji></font><br>
