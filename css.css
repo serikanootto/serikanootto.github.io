@@ -1,0 +1,82 @@
+
+h1{
+     /* 背景グラデーションを指定・幅を 200% にしておく */
+  background: linear-gradient(to right, #f00 0%, #f80 14.28%, #dd0 28.56%, #0d0 42.85%, #0dd 57.14%, #00f 71.42%, #e0e 85.71%, #f00 100%) 0% center / 200% auto;
+  
+  /* 背景画像を文字でマスクする */
+          background-clip: text;
+  -webkit-background-clip: text;
+  
+  /* 文字色を透明にできればよく color: transparent でも color: rgba(0, 0, 0, 0) でも可 */
+          text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+  
+  /* アニメーション指定 */
+  animation: rainbow 1s linear infinite;
+  
+  text-align: center;
+  
+}
+
+niji{
+     /* 背景グラデーションを指定・幅を 200% にしておく */
+  background: linear-gradient(to right, #f00 0%, #f80 14.28%, #dd0 28.56%, #0d0 42.85%, #0dd 57.14%, #00f 71.42%, #e0e 85.71%, #f00 100%) 0% center / 200% auto;
+  
+  /* 背景画像を文字でマスクする */
+          background-clip: text;
+  -webkit-background-clip: text;
+  
+  /* 文字色を透明にできればよく color: transparent でも color: rgba(0, 0, 0, 0) でも可 */
+          text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+  
+  /* アニメーション指定 */
+  animation: rainbow 5s linear infinite;
+  
+  text-align: center;
+  
+}
+
+/* 背景の横位置をズラす */
+@keyframes rainbow {
+  to { background-position-x: 200%; }
+}
+
+/* 表示領域 */
+.naname {
+    width: 2500px;
+    overflow: hidden;
+}
+/* 表示領域に合わせてサイズと余白を設定 */
+.naname2 {
+    width: 2500px;
+    padding-left: 2500px;
+    white-space: nowrap;
+
+    animation-name: slide;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+ /* 背景グラデーションを指定・幅を 200% にしておく */
+  background: linear-gradient(to right, #f00 0%, #f80 14.28%, #dd0 28.56%, #0d0 42.85%, #0dd 57.14%, #00f 71.42%, #e0e 85.71%, #f00 100%) 0% center / 200% auto;
+  
+  /* 背景画像を文字でマスクする */
+          background-clip: text;
+  -webkit-background-clip: text;
+  
+  /* 文字色を透明にできればよく color: transparent でも color: rgba(0, 0, 0, 0) でも可 */
+          text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+  font-size: 300%;
+  font-style: oblique;
+  
+}
+@keyframes slide {
+    from    { transform: translate(0%); } 
+    100%,to { transform: translate(-100%); }
+      to { background-position-x: 200%; }
+}
+
+body{
+    background-color: #F0F0F0;
+}
