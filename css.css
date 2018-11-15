@@ -31,7 +31,7 @@ niji{
   -webkit-text-fill-color: transparent;
   
   /* アニメーション指定 */
-  animation: rainbow 5s linear infinite;
+  animation: rainbow 1s linear infinite;
   
   text-align: center;
   
