@@ -54,7 +54,7 @@ niji{
     white-space: nowrap;
 
     animation-name: slide;
-    animation-duration: 0.5s;
+    animation-duration: 0.1s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
  /* 背景グラデーションを指定・幅を 200% にしておく */
