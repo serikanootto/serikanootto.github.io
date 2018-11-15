@@ -44,13 +44,13 @@ niji{
 
 /* 表示領域 */
 .naname {
-    width: 2500px;
+    max-width: 90%;
     overflow: hidden;
 }
 /* 表示領域に合わせてサイズと余白を設定 */
 .naname2 {
-    width: 2500px;
-    padding-left: 2500px;
+    width: 90%;
+    padding-left: 90%;
     white-space: nowrap;
 
     animation-name: slide;
