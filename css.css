@@ -31,7 +31,7 @@ niji{
   -webkit-text-fill-color: transparent;
   
   /* アニメーション指定 */
-  animation: rainbow 1s linear infinite;
+  animation: rainbow 5s linear infinite;
   
   text-align: center;
   
@@ -54,7 +54,7 @@ niji{
     white-space: nowrap;
 
     animation-name: slide;
-    animation-duration: 3s;
+    animation-duration: 1s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
  /* 背景グラデーションを指定・幅を 200% にしておく */
