@@ -83,7 +83,8 @@ niji{
 }
 
 uzai{
-  animation: rainbow 5s linear infinite;
+    display: inline-block;
+    animation: uzai .1s  infinite;
   }
   
 @keyframes uzai {
