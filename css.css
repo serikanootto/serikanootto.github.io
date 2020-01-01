@@ -40,6 +40,11 @@ niji{
 /* 背景の横位置をズラす */
 @keyframes rainbow {
   to { background-position-x: 200%; }
+      0% {transform: translate(0px, 0px) rotateZ(0deg)}
+    25% {transform: translate(4px, 4px) rotateZ(3deg)}
+    50% {transform: translate(0px, 4px) rotateZ(0deg)}
+    75% {transform: translate(4px, 0px) rotateZ(-3deg)}
+    100% {transform: translate(0px, 0px) rotateZ(0deg)}
 }
 
 /* 表示領域 */
