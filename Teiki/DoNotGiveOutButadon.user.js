@@ -2,8 +2,8 @@
 // @name         DoNotGiveOutButadon
 // @namespace    http://lisge.com/ib/
 // @version      99.9
-// @description  Œˆ“¬‚ÍŒoŒ±’l—p‚Å‚·
-// @author       skrige
+// @description  Duel is Exp only
+// @author       tikuiti_himajin
 // @match        http://lisge.com/ib/k/*/*.html
 // @grant        GM_addStyle
 // ==/UserScript==
