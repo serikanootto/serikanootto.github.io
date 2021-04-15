@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         DoNotGiveOutButadon
 // @namespace    http://lisge.com/ib/
-// @version      50.0
+// @version      50.1
 // @description  Duel is Exp only
 // @author       tikuiti_himajin
 // @match        http://lisge.com/ib/k/*/*.html
