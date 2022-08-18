@@ -1,90 +1,262 @@
-<meta name="viewport" content="width=2500">
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 
 <head>
-<link rel="stylesheet" type="text/css" href="css.css" />
-
-<title>芹香の夫のはきだめActressAgain</title>
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>ジャパニーズMANGA</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/fuwaimg.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/jquery.js" charset="utf-8"></script>
+  <script src="js/common.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 </head>
-<body background="Teiki/Rkey/icon4.png">
+
 <body>
+<div id="title">
+  <img src="img/bg2.jpg">
+  <div class="title__inner">
+    <h1>ジャパニーズMANGA</h1>
+    <p>漫画っぽい雰囲気の<br>テンプレートです。</p>
 
-<h1><font size =7>芹香の夫のはきだめ</font></h1>
-<br>
-<br>
-<br>
-<div class="naname">
-    <div class="naname2">
-        ここは雑多に色々なものを置くはきだめです
-        <table border="0" cellspacing="0" cellpadding="0">
-            <tr><td align="center">
-                <a href="http://www.rays-counter.com/">
-                    <img src="http://www.rays-counter.com/d422_f8_022/5be82bb11eb66/" alt="アクセスカウンター" border="0"></a></td></tr><tr><td align="center">
-                    <img src="http://www.rays-counter.com/images/counter_01.gif" border="0">
-                    <img src="http://www.rays-counter.com/images/counter_02.gif" border="0">
-                    <img src="http://www.rays-counter.com/images/counter_03.gif" border="0" alt="">
-                    <img src="http://www.rays-counter.com/images/counter_04.gif" border="0">
-                    <img src="http://www.rays-counter.com/images/counter_05.gif" border="0" >
-                    </td></tr></table>
+  </div>
+</div>
+
+  <main>
+    <div class="container">
+      <div class="row">
+
+        <div class="col-12" id="headernav">
+          <div class="headernav__inner">
+            <nav>
+              <ul>
+                <li><a href="#illust">漫画・イラスト</a></li>
+                <li><a href="#novels">小説</a></li>
+                <li><a href="#about">このサイトについて</a></li>
+                <li><a href="#link">リンク集</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <h2>このテンプレートについて</h2>
+          <p>漫画っぽい、モノクロの個性的なデザインです。<br>
+            Web漫画を連載されているサイトさまにおすすめです。<br>
+            トップ画像はカラーのものを使っていただければ、<strong>CSSでモノクロになるフィルター効果を追加します</strong>。<br>
+            もちろん、フィルターをかけるCSSを無効にして、カラーイラストをお使いいただいても、巻頭カラーみたいでカッコよくなると思います。<br>
+          <a href="#">リンク文字はピンク色</a>。<strong>強調文字は波線です。</strong></p>
+
+          <ul>
+            <li><a href="books.html">頒布物一覧ページ</a> - 同人誌の紹介などに。</li>
+            <li><a href="text.html">文章用ページ</a> - 小説作品やレポート報告などに。</li>
+            <li><a href="comic.html">マンガ用ページ</a> - WEB漫画やイラスト展示に。</li>
+          </ul>
+
+          <div class="update">
+            <h4>これまでのあらすじ……</h4>
+            <div class="inner">
+              <dl>
+                <dt>2019.12.06</dt>
+                <dd>更新情報をここに記入できます。<br>
+                  改行することもできます。</dd>
+                <dt>2019.11.10</dt>
+                <dd>更新情報が長くなると、下にスクロールするようになります。</dd>
+                <dt>2019.11.05</dt>
+                <dd>また、スクロールバーがデザインの邪魔にならないよう、<br>
+                  cssで見た目をシンプルに整えています。<br>
+                  （IEなど、一部のブラウザでは反映されないかもです）</dd>
+                <dt>2019.11.01</dt>
+                <dd>たくさん更新して、たくさん下にスクロールさせてください。</dd>
+              </dl>
+            </div>
+          </div> <!-- end update -->
+        </div><!-- end col-12 -->
+
+        <div class="col-12 margin-top">
+          <h2 id="illust">漫画・イラスト</h2>
+
+          <h3>漫画</h3>
+
+          <p>連載中の漫画や新作、イベント情報など、大きなバナーで宣伝することができます。<br>
+            使用画像は850px×200px以上を推奨します。<br>
+            ボックスは背景色が黒/ピンク、位置が右/左で自由に設定できます。
+            class="text （right/left） （black/pink）"で設定してください。<br>
+            imgにclass="bw"を付けると白黒画像になります。</p>
+
+          <a href="comic.html" class="big-banner">
+            <img src="img/big-bn.jpg" alt="漫画です！" class="bw">
+            <div class="text right black">
+              <div class="text__inner">
+                              <h3>雪の降る街で</h3>
+                              <p>ラブロマンス漫画です。<br>
+                                2019.12.24更新</p>
+
+              </div>
+            </div>
+          </a><!-- end big-bn-->
+
+          <a href="comic.html" class="big-banner">
+            <img src="img/big-bn2.jpg" alt="漫画です！">
+            <div class="text left pink">
+              <div class="text__inner">
+                <h3>目立たせたい更新情報に</h3>
+                <p>パッと目を引くデザインです。見せゴマなどを設定するとよいかも。</p>
+              </div>
+            </div>
+          </a><!-- end big-bn -->
+
+          <div class="comiccard">
+
+            <a href="comic.html" class="comiccard__wrap black">
+              <img src="img/comic01.jpg" alt="漫画です！" class="bw">
+              <div class="text">
+                <h3>漫画１</h3>
+                <p>漫画の小さなカードです。pタグの外にspan class="new"を与えると、一行の簡単なフキダシポップがつけられます。</p>
+                <span class="new">new</span>
+              </div>
+            </a><!-- end comiccard__wrap -->
+
+            <a href="comic.html" class="comiccard__wrap pink">
+              <img src="img/comic02.jpg" alt="漫画です！" class="bw">
+              <div class="text">
+                <h3>漫画２</h3>
+                <p>ピンク色のボックスも使えます。aタグのclass="comiccard__wrap black/pink"で選べます。</p>
+              </div>
+            </a><!-- end comiccard__wrap -->
+
+            <a href="comic.html" class="comiccard__wrap black">
+              <img src="img/comic03.jpg" alt="漫画です！" class="bw">
+              <div class="text">
+                <h3>漫画３</h3>
+                <p>サムネイルは200px×200px以上の画像を使ってください。</p>
+              </div>
+            </a><!-- end comiccard__wrap -->
+
+          </div>
+
+          <h3>イラスト</h3>
+          <p>サムネイル画像は、100px×200pxより大きいものを使ってください。css側でいいサイズに切り抜いて表示されます。画像表示には<a href="https://do.gt-gt.org/product/fuwaimg/" target="_blank">fuwaimg</a>を使っています。<br>
+          <strong>liにclass="new"を与えるとnewマーク</strong>がつき、<strong>imgにclass="bw"を付けると白黒画像になります</strong>。</p>
+          <ul class="illust">
+            <li><a href="./img/01.jpg" data-fcaption="ここに説明" data-fimg="group1" class="fuwaimg"><img src="./img/01-s.jpg" class="bw"></a></li>
+            <li><a href="./img/02.jpg" data-fcaption="ここに説明" data-fimg="group1" class="fuwaimg"><img src="./img/02-s.jpg" class="bw"></a></li>
+            <li><a href="./img/03.jpg" data-fcaption="ここに説明" data-fimg="group1" class="fuwaimg"><img src="./img/03-s.jpg"></a></li>
+            <li class="new"><a href="./img/03.jpg" data-fcaption="ここに説明" data-fimg="group1" class="fuwaimg"><img src="./img/04-s.jpg"></a></li>
+          </ul>
+        </div> <!-- end col-12 -->
+
+          <div class="col-12 margin-top">
+            <h2 id="novels">小説</h2>
+            <p>文字のみの作品リストもご用意してますので、小説サイトさんにもお使いいただけます。</p>
+          </div>
+
+            <div class="col-md-6">
+              <h4>ジャンル名</h4>
+              <ul class="novel-1">
+                <li><a href="text.html">第一話！</a>
+                  <span>はちゃめちゃ大騒動！</span></li>
+                <li><a href="text.html">第二話！</a>
+                  <span>ライバルは黒いアイツ！？<br>先輩風を吹かせろ！！</span></li>
+                <li><a href="text.html">突然のメタ発言</a><span>説明をspanタグで囲ってください<br>
+                改行も可能です</span></li>
+                <li><a href="text.html">第四話！</a><span>あれ？第三話はどこいった？</span></li>
+              </ul>
+
+              <h4>ジャンル名</h4>
+              <p>novel-2クラス指定は説明なし、リストアイテムが複数になると区切り線が勝手に入る仕様です。過去作品などにどうぞ</p>
+              <ul class="novel-2">
+                <li><a href="text.html">前日譚</a></li>
+                <li><a href="text.html">読み切り１</a></li>
+                <li><a href="text.html">読み切り２</a></li>
+                <li><a href="text.html">読み切り３</a></li>
+                <li><a href="text.html">お題</a></li>
+              </ul>
+            </div> <!-- end col-md-6 -->
+
+            <div class="col-md-6">
+              <h4>ジャンル名</h4>
+              <p>class「col-md-6」を持っているdivを２つ並べることで、２カラムにもできます。<br>
+                liにclass="new"を与えるとnewマークがつきます</p>
+              <ul class="novel-1">
+                <li><a href="text.html">炎と竜の伝説</a>
+                  <span>ファンタジー冒険譚</span></li>
+                <li><a href="text.html">私立恋獄学園</a>
+                  <span>前代未聞のラブコメホラー</span></li>
+                <li class="new"><a href="text.html">私とダンナくん</a><span>なんてことない話です</span></li>
+              </ul>
+
+              <h4>連載</h4>
+              <p>***の連載です。</p>
+              <ul class="novel-2">
+                <li><a href="text.html">序章</a></li>
+                <li><a href="text.html">第一章</a></li>
+                <li><a href="text.html">第二章</a></li>
+                <li><a href="text.html">第三章</a></li>
+                <li class="new"><a href="text.html">外伝</a></li>
+                <li class="new"><a href="text.html">第四章：空のゆくえ</a></li>
+              </ul>
+            </div> <!-- end col-md-6 -->
+
+            <div class="col-12 margin-top">
+              <h2 id="about">このサイトについて</h2>
+              <p>このサイトはこんなサイトです。こんなことをしてます。<br>
+              ジャパニーズMANGA（http://xxx.xxx.jp/）<br>
+              バナー<br>
+              <img src="./img/bn-l.jpg"><img src="./img/bn-m.jpg"><img src="./img/bn-s.jpg"></p>
+            </div> <!-- end col-12 -->
+
+            <div class="col-12 margin-top">
+              <h2 id="link">link</h2>
+              <p>大好きなサイトさんです。</p>
+              <ul class="link01">
+                <li><a href="#" target="_blank"><img src="./img/bn-l.jpg"></a></li>
+                <li><a href="#" target="_blank"><img src="./img/bn-l.jpg"></a></li>
+                <li><a href="#" target="_blank"><img src="./img/bn-l.jpg"></a></li>
+                <li><a href="#" target="_blank"><img src="./img/bn-l.jpg"></a></li>
+                <li><a href="#" target="_blank"><img src="./img/bn-l.jpg"></a></li>
+                <li><a href="#" target="_blank"><img src="./img/bn-l.jpg"></a></li>
+              </ul>
+
+              <h3>素材サイトさま</h3>
+              <p><strong>同梱の壁紙を使用する場合はweb*citron様へのリンクは消さないでください。</strong></p>
+              <ul class="link02">
+                <li><a href="http://www.webcitron.com/" title="壁紙をお借りしました" target="_blank">web*citron</a></li>
+                <li><a href="https://unsplash.com/" title="トップ写真をお借りしました" target="_blank">Unsplash</a></li>
+                <li><a href="#" target="_blank">＊＊＊</a></li>
+                <li><a href="#" target="_blank">＊＊＊</a></li>
+              </ul>
+            </div> <!-- end col-12 -->
+
+            <div class="col-12 margin-top">
+              <h2 id="mail">mail</h2>
+              <p class="margin-bottom">このままでは機能しませんので、<a href="https://www.php-factory.net/" target="_blank">PHP工房様</a>の「Mailform01」などをご利用ください。</p>
+              <form method="post" action="ここにアクション" class="mailform">
+              <input type="text" name="message" placeholder="感想が活力になります">
+              <input type="submit" value="送信する">
+              </form>
+
+              <h3 class="margin-top">テキストエリアつきメールフォーム</h3>
+              <form method="post" action="ここにアクション" class="mailform">
+              <textarea rows="5" name="message" placeholder="感想が活力になります"></textarea>
+              <input type="submit" value="送信する">
+              </form>
+            </div>
+
+      </div> <!-- end row -->
+
+    </div> <!-- end container -->
+  </main>
+
+  <footer>
+    <div class="container">
+      <p class="template"><a href="https://do.gt-gt.org/" target="_blank">template by do.</a></p>
     </div>
-</div>
-<br>
-<br>
-<br>
-<niji><font size = 5>メインコンテンツ</font></niji>
-<br>
-<div class="uzai">
-<a href=teiki.html>定期ゲーム</a><br>
-<a href=serika.html>来栖川芹香という人の話</a><br>
-<a href=sirengb2.html>シレンGB2　特訓パス</a>(消えたサイトから勝手にアーカイブというやつ)<br>
-<a href=poyon2.html>ポヨンのダンジョンルーム2_攻略</a>
-</div>
-<br>
-<br>
-<br>
+  </footer>
 
-<niji><font size = 5>クソコンテンツ</font></niji>
-<br>
-<div class="uzai">
-<a href=hisoutensave.zip>東方緋想天全キャラカード4枚以上&隠しキャラコンプセーブデータ </a><font size = 4><niji>　三桁さん関係ないけど光らせとこ</niji></font><br>
-<a href=hisoutensokusave.zip>東方非想天則全キャラカード4枚以上&隠しキャラコンプセーブデータ </a><font size = 4><niji>　三桁さん関係ないけど光らせとこ</niji></font><br>
-<a href=sinkirousave.zip>東方心綺楼マミゾウ解禁セーブデータ</a><font size = 4><niji>　居酒屋で有名な三桁さんありがとう！</niji></font><br>
-<a href=sinpirokusave.zip>東方深秘録隠しキャラ解禁セーブデータ</a><font size = 4><niji>　焼き肉で有名な三桁さんありがとう！</niji></font>
-</div>
-<br>
-
-<!--
-　 　 　 　 　 ／　 　 　 　 ...:.:.:.:.:.:.:.:.:.,.ｨ!ヽ.__:.:.:.:.:.:...`ｰ---‐''｜
-　　　 　 　 /　 　 　 　 .:.:.:.:.:.:.,. '"ア´,ハ　＼＼__.:.:.:.:.　　 　 　 　 !
-.　　 　 　 ,'　　　　　 .:.:.:.:.: ／　, '　 厶jム 　 ヽヽ＼.:.:.:.:.:..　　 　 ,'
-.　　　 　 ,'　　 　 　 .:.:.:.:. /,　 / 　 /　　　ヽ ヽ ヽヽ. ＼:.:.:.: 　　  /
-. 　 　 　 | 　 　 　 .:.:.:.:.:.//　/// /__　　　　',　ヽ i｜ヽ ＼:.　　　　/
-.　　　 　 l　 　 　 :.:.:.:.:.:.l/　/ｒ''"二￣｀ヽ､＿},∠..j_j }　',ヽヽ／
-　　　　　 ', 　 　 :.:.:.:.:. /'ﾊ:::|　  ｀ヽ:::::: ,ｲ刃ヽ::＼ } }ﾊj　　　　　　　　　　　　　　　　 　 　　_
-　　　 　 　 ､ 　 :.:.:.:.: /,　/////Λy=＝ﾐ ﾉ:::__:{tﾉり i},.ｲﾊj丿　　兄チャマ！　　　　　　　　　　　　　／丿
-　　　　　　　＼ :.:.:.:.// /{ ! ! l､{ゞニニイ´ ,.｀弌_少1リjﾉ　　　 　 　 　 ___　　_,ノアjｭ.＿,,.. --‐''／
-　　　　　　　　 ｀ヽ､l/ /}ﾊ{Λ{,,,,,,＞=､　　 f_フ　　,.ｲ l !＼＼　　　　　 ／　　￣/,ｭﾉ^′　　　_,,. -＜
-　　　　　　　　　 　 | /j＞''"´　　 __ ＼___ ,.ィ〔 !ﾊ |ﾊ＼ヽ ヽ,. -‐ｧ'´　　　　/厶　　　 　 ヽ ＼―┘
-　　　　　　　　　 　 l,'/　　 　 ::／.:.:.:／ ／￣＼! }ﾊ } ハj／.:.:／　　　　　 辷iﾑ＼,___　　＼ ＼ ＼　　 　 　 　 　 ＿__
-　　　　　　　　　　　/　　　　::／.:.:.:／  ／　　 ,.ﾆﾆゝ┴ｧ''´ 　 '´　 　 　 　 　 ∨込x‐v_ﾉ＼ ＼_ト-'　　　　,. ‐''"´　/´
-　　　　　　　　　　 ,'　　 　:／:, ‐ ／　／　／　／　／　　 　 　 ,: 　 　 __＿　 ∨ァｧ┘　　 ￣　　　 　　／ 　 　 　　 {
-.　　　　　　　　 　 j__,,. ‐''"´　／ 　 /／ 　 '　／ 　 　 　 　 /::.　__ _＿／｀ヽj／　　　　　　　 ／　　 　 　 　　 ',
-　　　　 　 　 　 ／　　　 .:.:._,./　　　,'´　　　　 　 　 　 　 　 /::.:.,∠..＿　　　　　　　　　  , '　　.:.:.:.:.:.:.:.:ヽ
-　　　　　　　　 {　..::_,. ‐''"´:/　  :/＞;---､　　 　 　 　 ／￣´｀`ヽ､　｀ヽ、　　 　 　 　  /　　　 ..:.:.:.:.:.:.:.　 ＼
-　　　　　 　 　 厂´　 .:.:.:.／　 ,'　:/´ :/　　　＼_ ＿＿／{::::::::::::::＼:.　 ＼--- ――…ァ'　　　　　　　　　　　　　　　 ＼
-.　　　　　　　 /　　..:.:.:／　.　:.:./ : /!　,'　　　　　　　__〉〉〉＼ :::::：ヽ :.:.` ｰ----‐''´　　　　　　　　　　　　　　　　 ＼
-　　　　　　　/　　 　 ´　.:.:.／ .:./.:|､:.:.　　　　, '　／ _,.二_ア′:::::::::ヽ :.:.:.　　　　 　 _＿＿ ＿　　　.:.:.:.:.:.:.:.:.／
-　　　　　 ／　　　　 _,,. ‐'´.:.:／.:.:.| ヽ:. 　 ,∠-ｒﾍ￣|:|::::::|:|ヽ ::::::::＼:.:.:,. -‐''"´,. ‐''" 　　:.:.::.:.::.:.::／
-　　　　　{ -‐　　　　　　_,,.イ 　 :.:.|＼ト-'´　 __l__|___|:|::::::|:|.｜:::::::::: ,. ‐''´ 　　／　.:.::.:.::.:.:.:.:.:.:.:／
-　 　 　 〈r‐ｧ''"ア¨¨￣´ :.:/　　.:.:.|:＼＼_,∠..＿　　｀￣｢｢厂＼ ::::＿,. -‐''"´　 　　　　／` ｰ-- -------------‐ｧ…￢''"´
-　　　　　У::／　　　 :.:.:.:/　　 .:.:.:{ :.:. ヽ ＼.:.:.:.:.:.￣￣¨¨¨¨¨¨￣　　..:.:.:.:.:/:::::::::::::::::::::::::::/
-.　 　 　 /／　　　 　 :.:.:/　　　　:.:.'､ :.:.:. ＼ ｀ヽ､.:.:.:.:.:.　　　　　　　　　　　　.:.{::::::::::::::::::::::::::::{
-.　　　 ／ 　 　 　 　 :.:,'　.:,'　　　　ヽ :.:.:.:..＼　 ｀ヽ､.:.:.:.:.:.:.:..　　　　　　　　'､___:::::::::::::::::::::::'､
-　　／　　　　　 　 　 :.ｌ.:./　　　　｀ヽ､＼ :.:.:.:.:＼　　 ｀`丶､.:.:.:.:.:.:..　　　　　　　 ＼｀`丶､::::::::::::::::::::ヽ
-.／　　　　　　 ..:::.. 　:j／　　 :..　 　 　 ￣ ￣￣￣｀`丶､　　｀`丶､.:.:.　 　 　 　 :.:.:.:.:.:＼　　＼:::::::::::::::::: 〉
-　　　 　 　 　 :.::::.:　／　　　　:.:.:...　　　　　　　　　＼　　　　｀`丶､_　　　　　　:.:.:.:.:.:.＼　　＼::::::::::::: /
--->
+<script src="js/scrollbooster.min.js" charset="utf-8"></script>
+<script src="js/fuwaimg.js" charset="utf-8"></script>
 </body>
+
 </html>
