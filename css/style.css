@@ -625,17 +625,17 @@ input[type=submit]:focus {
   flex-wrap: wrap;
   -webkit-box-pack: justify;
           justify-content: space-between;
-  width: 95%;
+  width: 100%;
   margin: 20px auto;
 }
 
 .comiccard .comiccard__wrap {
   -webkit-box-flex: 0;
-          flex: 0 0 48%;
+          flex: 0 0 33%;
   display: -webkit-box;
   display: flex;
   position: relative;
-  height: 200px;
+  height: 20vh;
   border: 2px solid #000000;
   margin-bottom: 20px;
 }
@@ -674,13 +674,13 @@ input[type=submit]:focus {
   border-left: none;
   padding: 0;
   margin: 0 auto 0.5em;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .comiccard .comiccard__wrap .text p {
   padding: 0;
   margin: 0;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .comiccard .comiccard__wrap .new {
