@@ -635,7 +635,7 @@ input[type=submit]:focus {
   display: -webkit-box;
   display: flex;
   position: relative;
-  height: 20vh;
+  height: 120px;
   border: 2px solid #000000;
   margin-bottom: -5vh;
 }
@@ -654,7 +654,7 @@ input[type=submit]:focus {
 }
 
 .comiccard .comiccard__wrap img {
-  width: 50%;
+  width: 38%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -664,9 +664,9 @@ input[type=submit]:focus {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  width: 50%;
+  width: 100%;
   color: #ffffff;
-  padding: 0 10px 0 20px;
+  padding: 0 10px 0 10px;
   margin: auto;
 }
 
@@ -739,6 +739,9 @@ input[type=submit]:focus {
   .comiccard .comiccard__wrap {
     margin-bottom: 20px;
   }
+  .comiccard .comiccard__wrap img {
+    width: 25%;
+}
 }
 
 ul.novel-1 {
@@ -997,6 +1000,7 @@ h2.h2-a {
   padding: 10px 20px;
   background: #000000;
   color: #ffffff;
+  text-align: center;
 }
 
 h2.h2-b {
@@ -1085,7 +1089,7 @@ ol.li-b li {
   margin-bottom: 0.5em;
 }
 
-#text .atogaki p {
+#text .setsumei p {
   color: #a1a1a1;
   font-size: 14px;
 }
@@ -1099,10 +1103,10 @@ ol.li-b li {
   font-size: 16px;
 }
 
-.comics {
+.charas {
   display: block;
   max-width: 100%;
-  margin: 80px auto;
+  margin: 50px auto;
   border: 1px #333333 solid;
 }
 
