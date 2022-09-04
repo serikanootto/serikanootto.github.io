@@ -681,7 +681,7 @@ input[type=submit]:focus {
   position: relative;
   height: 120px;
   border: 2px solid #000000;
-  margin-bottom: -5vh;
+  margin-bottom: 0.5vh;
 }
 
 .comiccard .comiccard__wrap.black {
