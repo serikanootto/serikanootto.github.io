@@ -683,7 +683,11 @@ input[type=submit]:focus {
   border: 2px solid #000000;
   margin-bottom: 0.5vh;
 }
-
+.comiccard::after{
+  content:"";
+  display: block;
+  width:33%;
+}
 .comiccard .comiccard__wrap.black {
   background: #000000;
 }
