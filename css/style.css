@@ -311,8 +311,8 @@ input[type=submit]:focus {
 
 #title .title__inner {
   position: absolute;
-  top: 10%;
-  right: 12%;
+  top: 5%;
+  right: 5%;
   /* サイト名と説明文の位置です */
 }
 
