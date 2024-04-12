@@ -166,6 +166,18 @@ ul {
 	transform: rotate(-45deg) !important;
 }
 
+.font1 { /*ここから独自記述*/
+font-size: 0.8rem;
+font-style: italic;
+}
+
+.sasie {
+  display: block;
+  max-width: 100%;
+  border: 1px #333333 solid;
+  margin-right: auto;
+}
+
 @media (max-width: 575px) {
   ol,
   p,
