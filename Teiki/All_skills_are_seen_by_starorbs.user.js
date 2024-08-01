@@ -10,7 +10,7 @@
 (function() {
     'use strict';
 
-    const VERSION = '0.2';
+    const VERSION = '0.1919';
     console.log(`Select Options Modifier v${VERSION} loaded`);
 
     const skillDescriptions = {};
