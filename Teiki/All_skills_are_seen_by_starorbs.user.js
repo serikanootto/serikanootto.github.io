@@ -1,9 +1,10 @@
 // ==UserScript==
 // @name         増弾ハイブレイク/ツインヒールを救いたい(All_skills_are_seen_by_starorbs)
 // @namespace    http://sexyradish.jp
-// @version      0.19
+// @version      0.1919
 // @description  スキルを作るのプルダウンをトウィークします
 // @match        https://soraniwa.428.st/stb/*
+// @updateurl	https://serikanootto.github.io/Teiki/All_skills_are_seen_by_starorbs.user.js
 // @grant        none
 // ==/UserScript==
 (function() {
