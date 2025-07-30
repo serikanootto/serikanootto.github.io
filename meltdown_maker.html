@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>チャット風会話フォーマット</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .chat-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .message {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            animation: fadeInUp 0.5s ease-out;
+        }
+
+        .avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 10px;
+            margin-right: 15px;
+            flex-shrink: 0;
+            overflow: hidden;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .message-content {
+            flex: 1;
+        }
+
+        .speaker-name {
+            color: #FFD700;
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 8px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .speech-bubble {
+            background: linear-gradient(135deg, #4a6741, #5a7c50);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 20px;
+            position: relative;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            line-height: 1.6;
+            font-size: 15px;
+        }
+
+        .speech-bubble::before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 15px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 10px 15px 10px 0;
+            border-color: transparent #4a6741 transparent transparent;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            to {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+        }
+
+        .message:nth-child(even) .speech-bubble {
+            background: linear-gradient(135deg, #3d5a99, #4a6ab8);
+        }
+
+        .message:nth-child(even) .speech-bubble::before {
+            border-color: transparent #3d5a99 transparent transparent;
+        }
+
+        /* 編集用のスタイル */
+        .editable {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .editable:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        .edit-mode {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px dashed #FFD700;
+        }
+
+        .delete-btn {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 25px;
+            height: 25px;
+            background: #ff4757;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            display: none;
+            z-index: 10;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .delete-btn:hover {
+            background: #ff3742;
+            transform: scale(1.1);
+        }
+
+        .message:hover .delete-btn {
+            display: block;
+        }
+
+        .message {
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <!-- メッセージ1 -->
+        <div class="message">
+            <button class="delete-btn" onclick="deleteMessage(this)" title="メッセージを削除">×</button>
+            <div class="avatar">
+                <img src="https://serikanootto.github.io/Teiki/clitra/icon.gif" alt="カキハラ" onclick="changeImage(this)">
+            </div>
+            <div class="message-content">
+                <div class="speaker-name" contenteditable="true" onclick="editText(this)">カキハラ</div>
+                <div class="speech-bubble editable" contenteditable="true" onclick="editText(this)">
+                    「だいたい操作説明通りに動かせば動くよ<br>
+                    gifもつかえるよ」
+                </div>
+            </div>
+        </div>
+
+        <!-- メッセージ2 -->
+        <div class="message">
+            <button class="delete-btn" onclick="deleteMessage(this)" title="メッセージを削除">×</button>
+            <div class="avatar">
+                <img src="https://serikanootto.github.io/Teiki/clitra/icon2.gif" alt="カボチャ" onclick="changeImage(this)">
+            </div>
+            <div class="message-content">
+                <div class="speaker-name" contenteditable="true" onclick="editText(this)">カボチャ</div>
+                <div class="speech-bubble editable" contenteditable="true" onclick="editText(this)">
+                    「これ以上説明いる？
+                    」
+                </div>
+            </div>
+        </div>
+
+        <!-- メッセージ3 -->
+        <div class="message">
+            <button class="delete-btn" onclick="deleteMessage(this)" title="メッセージを削除">×</button>
+            <div class="avatar">
+                <img src="https://serikanootto.github.io/Teiki/clitra/icon3.gif" alt="パン" onclick="changeImage(this)">
+            </div>
+            <div class="message-content">
+                <div class="speaker-name" contenteditable="true" onclick="editText(this)">パン</div>
+                <div class="speech-bubble editable" contenteditable="true" onclick="editText(this)">
+                    「パン！と手を鳴らした。<br>
+                    パンを食べながら。」
+                </div>
+            </div>
+        </div>
+
+    <script>
+        // メッセージ削除機能
+        function deleteMessage(button) {
+            if (confirm('このメッセージを削除しますか？')) {
+                const message = button.closest('.message');
+                message.style.animation = 'fadeOut 0.3s ease-out';
+                setTimeout(() => {
+                    message.remove();
+                }, 300);
+            }
+        }
+
+        // テキスト編集機能
+        function editText(element) {
+            element.classList.add('edit-mode');
+            element.focus();
+            
+            element.addEventListener('blur', function() {
+                element.classList.remove('edit-mode');
+            });
+            
+            element.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' && !e.shiftKey) {
+                    e.preventDefault();
+                    element.blur();
+                }
+            });
+        }
+
+        // 画像変更機能
+        function changeImage(img) {
+            const newUrl = prompt('新しい画像のURLを入力してください:', img.src);
+            if (newUrl && newUrl.trim() !== '') {
+                img.src = newUrl;
+            }
+        }
+
+        // メッセージ追加機能
+        function addMessage() {
+            const container = document.querySelector('.chat-container');
+            const newMessage = document.createElement('div');
+            newMessage.className = 'message';
+            newMessage.innerHTML = `
+                <button class="delete-btn" onclick="deleteMessage(this)" title="メッセージを削除">×</button>
+                <div class="avatar">
+                    <img src="https://via.placeholder.com/60x60/666666/FFFFFF?text=新" alt="新キャラ" onclick="changeImage(this)">
+                </div>
+                <div class="message-content">
+                    <div class="speaker-name" contenteditable="true" onclick="editText(this)">新しいキャラクター</div>
+                    <div class="speech-bubble editable" contenteditable="true" onclick="editText(this)">
+                        「ここにメッセージを入力してください」
+                    </div>
+                </div>
+            `;
+            container.appendChild(newMessage);
+        }
+
+        // 右クリックでメッセージ追加
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            if (confirm('新しいメッセージを追加しますか？')) {
+                addMessage();
+            }
+        });
+
+        // 使い方の説明を表示
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                alert('使い方:\n- 名前や吹き出しをクリックして編集\n- 画像をクリックして変更\n- 右クリックで新しいメッセージを追加\n- メッセージにマウスを乗せると×ボタンで削除可能');
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
