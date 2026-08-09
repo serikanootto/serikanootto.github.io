@@ -703,6 +703,11 @@ input[type=submit]:focus {
 .comiccard .comiccard__wrap.black {
   background: #000000;
 }
+/* 幅を上書きするだけの追加クラス */
+.comiccard .comiccard__wrap.full {
+  flex: 0 0 100%;
+  height: 240px;
+}
 
 .comiccard .comiccard__wrap.pink {
   background: #d91a56;
