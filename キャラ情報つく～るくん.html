@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>キャラ個人データ生成</title>
+<style>
+  body { font-family: sans-serif; max-width: 860px; margin: 24px auto; }
+  textarea { width: 100%; height: 280px; font-family: ui-monospace, monospace; }
+  .preview { border: 1px solid #ccc; padding: 12px; margin: 12px 0; white-space: pre-wrap; }
+  .error { border: 1px solid #e33; background: #fee; padding: 12px; margin: 12px 0; color: #900; white-space: pre-wrap; }
+  button { padding: 8px 14px; }
+  section { margin-bottom: 32px; }
+</style>
+
+<p>キャラJSONを選択（複数可）</p>
+<input type="file" id="files" accept=".json,.txt,application/json,text/plain" multiple>
+<div id="out"></div>
+
+<script>
+const KEYS = ["名前", "年齢", "性別", "身長", "体重", "種族", "性格", "嫌い", "出演作品"];
+
+function rowsOf(data) {
+  const rows = KEYS.map(k => {
+    const v = data[k];
+    const text = (v == null || String(v).trim() === "") ? "　" : v;
+    return [k, text];
+  });
+  const extra = data.extra && typeof data.extra === "object" ? data.extra : {};
+  for (const [k, v] of Object.entries(extra)) {
+    if (v != null && String(v).trim() !== "") rows.push([k, v]);
+  }
+  return rows;
+}
+
+function toHtml(rows) {
+  return rows.map(([k, v]) => `${esc(k)}：${esc(v)}<br>`).join("\n");
+}
+
+function esc(s) {
+  return String(s)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;");
+}
+
+// ファイルをバイナリ(ArrayBuffer)として読み込む（file://でも確実に動く）
+function readFileAsArrayBuffer(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = () => reject(reader.error || new Error("読み込みに失敗しました"));
+    reader.readAsArrayBuffer(file);
+  });
+}
+
+// TextDecoderで指定エンコーディングとして文字列化。
+// fatal:true にすることで、不正なバイト列があれば「�」に置き換えず例外を投げさせる
+// （FileReader.readAsTextだと不正バイトを黙って�に変換してしまい判定できないため）
+function decodeAs(buffer, encoding) {
+  const decoder = new TextDecoder(encoding, { fatal: true });
+  return decoder.decode(buffer);
+}
+
+// UTF-8として厳密デコードを試し、失敗（＝UTF-8ではない）ならShift_JISとしてデコードする
+async function readJsonTextAuto(file) {
+  const buffer = await readFileAsArrayBuffer(file);
+
+  // BOM付きUTF-8のチェック
+  const bytes = new Uint8Array(buffer);
+  const hasBom = bytes.length >= 3 && bytes[0] === 0xEF && bytes[1] === 0xBB && bytes[2] === 0xBF;
+
+  try {
+    const utf8Text = decodeAs(buffer, "utf-8");
+    return { text: utf8Text, encoding: hasBom ? "UTF-8 (BOM付き)" : "UTF-8" };
+  } catch (e) {
+    // 厳密なUTF-8として不正なバイト列がある＝UTF-8ではない可能性が高い
+  }
+
+  try {
+    const sjisText = decodeAs(buffer, "shift_jis");
+    return { text: sjisText, encoding: "Shift_JIS" };
+  } catch (e) {
+    // Shift_JISとしても不正
+  }
+
+  // 最終手段：エラーを出さない緩いUTF-8デコードで返す（エラー表示用に中身を見せるため）
+  const looseText = new TextDecoder("utf-8", { fatal: false }).decode(buffer);
+  return { text: looseText, encoding: "不明（判別できませんでした）" };
+}
+
+function fallbackCopy(text) {
+  const ta = document.createElement("textarea");
+  ta.value = text;
+  ta.style.position = "fixed";
+  ta.style.opacity = "0";
+  document.body.appendChild(ta);
+  ta.focus();
+  ta.select();
+  let ok = false;
+  try {
+    ok = document.execCommand("copy");
+  } catch (e) {
+    ok = false;
+  }
+  document.body.removeChild(ta);
+  return ok;
+}
+
+async function copyText(text, btn) {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      btn.textContent = "コピーした";
+      return;
+    }
+  } catch (e) {
+    // フォールバックへ
+  }
+  const ok = fallbackCopy(text);
+  btn.textContent = ok ? "コピーした" : "コピー失敗（手動で選択してください）";
+}
+
+document.getElementById("files").addEventListener("change", async (e) => {
+  const box = document.getElementById("out");
+  box.innerHTML = "";
+
+  for (const file of e.target.files) {
+    const wrap = document.createElement("section");
+    wrap.innerHTML = `<h2>${esc(file.name)}</h2>`;
+    box.appendChild(wrap);
+
+    let text;
+    try {
+      const result = await readJsonTextAuto(file);
+      text = result.text;
+    } catch (err) {
+      const div = document.createElement("div");
+      div.className = "error";
+      div.textContent = "ファイルの読み込みに失敗しました：" + err.message;
+      wrap.appendChild(div);
+      continue;
+    }
+
+    let data;
+    try {
+      data = JSON.parse(text);
+    } catch (err) {
+      const div = document.createElement("div");
+      div.className = "error";
+      div.textContent =
+        "JSONの形式が正しくありません：" + err.message +
+        "\n\n---- 読み込んだ内容（先頭200文字） ----\n" +
+        text.slice(0, 200);
+      wrap.appendChild(div);
+      continue;
+    }
+
+    const html = toHtml(rowsOf(data));
+    const title = document.createElement("h2");
+    title.textContent = data.名前 || file.name;
+    wrap.innerHTML = ""; // タイトルを作り直す
+    wrap.appendChild(title);
+
+    const preview = document.createElement("div");
+    preview.className = "preview";
+    preview.innerHTML = html;
+    wrap.appendChild(preview);
+
+    const textarea = document.createElement("textarea");
+    textarea.value = html;
+    wrap.appendChild(textarea);
+
+    const p = document.createElement("p");
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.textContent = "コピー";
+    btn.onclick = () => copyText(html, btn);
+    p.appendChild(btn);
+    wrap.appendChild(p);
+  }
+});
+</script>
